@@ -79,12 +79,12 @@ issues or pull requests you're interested in.
 | `feedback` | General feedback more than bug reports or feature requests. |
 | `help-wanted` | The ATLauncher team would appreciate help from the community in resolving these issues. |
 | `beginner` | Less complex issues which would be good first issues to work on for users who want to contribute. |
-| `more-information-needed` | More information needs to be collected about these problems or feature requests (e.g. steps to reproduce). |
+| `more-information-needed` | More information needs to be collected about these problems or feature requests |
 | `needs-reproduction` | Likely bugs, but haven't been reliably reproduced. |
 | `triage-help-needed` | Help is needed to triage the issue. |
 | `blocked` | Issues blocked on other issues. |
 | `duplicate` | Issues which are duplicates of other issues, i.e. they have been reported before. |
-| `wontfix` | The ATLauncher team has decided not to fix these issues for now, either because they're working as intended or for some other reason. |
+| `wontfix` | The ATLauncher team has decided not to fix these issues for now for some reason. |
 | `invalid` | Issues which aren't valid (e.g. user errors). |
 | `wrong-repo` | Issues reported on the wrong repository. |
 
