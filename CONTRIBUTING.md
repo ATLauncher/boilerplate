@@ -58,8 +58,8 @@ pack. A good name for a feature branch would be `feature/44-unable-to-delete-pac
 
 ## Styling Best Practices
 
-When committing code or documentation, please ensure that you follow our set out [style guide]
-(https://github.com/ATLauncher/style-guide).
+When committing code or documentation, please ensure that you follow our set out
+[style guide](https://github.com/ATLauncher/style-guide).
 
 ## Issue and Pull Request Labels
 
