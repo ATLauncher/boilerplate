@@ -33,6 +33,17 @@ npm install
 Lastly you will need to either set an environment variable called `GITHUB_ACCESS_TOKEN` with a GitHub access token
 generated from <https://github.com/settings/tokens>.
 
+### Add Discord Hook
+
+This will ensure that all repositories have the correct webhook setup for Discord notifications.
+
+This requires the `DISCORD_WEBHOOK_URL` environment variable is set with the url provided by Discord
+(with /github added to the end).
+
+```bash
+npm run github:discord-hook
+```
+
 ### Sync GitHub Labels
 
 If labels are updated in the `github.json` file, then those labels can be synced to all repositories listed in

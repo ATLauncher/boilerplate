@@ -17,11 +17,15 @@
     "url": "git+https://github.com/ATLauncher/meta.git"
   },
   "scripts": {
+    "github": "run-p github:*",
+    "github:discord-hook": "node src/github/discord-hook.js",
     "github:sync-labels": "node src/github/sync-labels.js"
   },
   "dependencies": {
     "@octokit/rest": "~15.2.6",
     "install": "~0.11.0",
-    "npm": "~5.8.0"
+    "lodash": "~4.17.5",
+    "npm": "~5.8.0",
+    "npm-run-all": "~4.1.2"
   }
 }

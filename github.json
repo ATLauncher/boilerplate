@@ -2,29 +2,50 @@
   "repositories": [
     {
       "owner": "ATLauncher",
-      "repo": "backend"
+      "repo": "backend",
+      "discordHook": true
     },
     {
       "owner": "ATLauncher",
-      "repo": "javascript"
+      "repo": "javascript",
+      "discordHook": true
     },
     {
       "owner": "ATLauncher",
-      "repo": "meta"
+      "repo": "meta",
+      "discordHook": true
     },
     {
       "owner": "ATLauncher",
-      "repo": "client"
+      "repo": "client",
+      "discordHook": true
     },
     {
       "owner": "ATLauncher",
-      "repo": "discord-bot"
+      "repo": "discord-bot",
+      "discordHook": false
     },
     {
       "owner": "ATLauncher",
-      "repo": "style-guide"
+      "repo": "style-guide",
+      "discordHook": true
     }
   ],
+  "webhooks": {
+    "discord": {
+      "events": [
+        "commit_comment",
+        "issues",
+        "issue_comment",
+        "milestone",
+        "pull_request",
+        "pull_request_review",
+        "pull_request_review_comment",
+        "push",
+        "release"
+      ]
+    }
+  },
   "labels": [
     {
       "name": "beginner",
