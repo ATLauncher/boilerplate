@@ -52,3 +52,12 @@ If labels are updated in the `github.json` file, then those labels can be synced
 ```bash
 npm run github:sync-labels
 ```
+
+### Update Template Files
+
+In the `github.json` file there is a list of template files. If a repository has `updateTemplateFiles` set to true, when
+the below command is run, it will update/add each of the template files if it's out of date or missing.
+
+```bash
+npm run github:update-template-files
+```

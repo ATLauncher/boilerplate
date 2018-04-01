@@ -1,5 +1,5 @@
-const octokitRest = require('@octokit/rest');
 const _ = require('lodash');
+const octokitRest = require('@octokit/rest');
 
 const github = require('../../github.json');
 
