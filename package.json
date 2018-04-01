@@ -1,0 +1,27 @@
+{
+  "name": "@atlauncher/meta",
+  "version": "0.1.0",
+  "description": "Meta repository for ATLauncher",
+  "homepage": "https://github.com/ATLauncher/meta#readme",
+  "bugs": {
+    "url": "https://github.com/ATLauncher/meta/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Ryan Dowling",
+    "email": "ryan.dowling@atlauncher.com",
+    "url": "https://github.com/RyanTheAllmighty"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ATLauncher/meta.git"
+  },
+  "scripts": {
+    "github:sync-labels": "node src/github/sync-labels.js"
+  },
+  "dependencies": {
+    "@octokit/rest": "~15.2.6",
+    "install": "~0.11.0",
+    "npm": "~5.8.0"
+  }
+}

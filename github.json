@@ -1,0 +1,140 @@
+{
+  "repositories": [
+    {
+      "owner": "ATLauncher",
+      "repo": "backend"
+    },
+    {
+      "owner": "ATLauncher",
+      "repo": "javascript"
+    },
+    {
+      "owner": "ATLauncher",
+      "repo": "meta"
+    },
+    {
+      "owner": "ATLauncher",
+      "repo": "client"
+    },
+    {
+      "owner": "ATLauncher",
+      "repo": "discord-bot"
+    },
+    {
+      "owner": "ATLauncher",
+      "repo": "style-guide"
+    }
+  ],
+  "labels": [
+    {
+      "name": "beginner",
+      "color": "6badd3",
+      "description": "Less complex issues which would be good first issues to work on for users who want to contribute."
+    },
+    {
+      "name": "blocked",
+      "color": "b60205",
+      "description": "Issues blocked on other issues."
+    },
+    {
+      "name": "bug",
+      "color": "ee0701",
+      "description": "Confirmed bugs or reports that are very likely to be bugs."
+    },
+    {
+      "name": "critical-priority",
+      "color": "C3272B",
+      "description": "Should be addressed with the highest priority."
+    },
+    {
+      "name": "duplicate",
+      "color": "cccccc",
+      "description": "Issues which are duplicates of other issues, i.e. they have been reported before."
+    },
+    {
+      "name": "enhancement",
+      "color": "84b6eb",
+      "description": "Feature requests."
+    },
+    {
+      "name": "feedback",
+      "color": "f4f492",
+      "description": "General feedback more than bug reports or feature requests."
+    },
+    {
+      "name": "help-wanted",
+      "color": "63f98b",
+      "description": "The ATLauncher team would appreciate help from the community in resolving these issues."
+    },
+    {
+      "name": "high-priority",
+      "color": "e25904",
+      "description": "High priority to be addressed."
+    },
+    {
+      "name": "invalid",
+      "color": "b60205",
+      "description": "Issues which aren't valid (e.g. user errors)."
+    },
+    {
+      "name": "low-priority",
+      "color": "73e2bd",
+      "description": "Low priority to be addressed."
+    },
+    {
+      "name": "more-information-needed",
+      "color": "dce226",
+      "description": "More information needs to be collected about these problems or feature requests."
+    },
+    {
+      "name": "needs-review",
+      "color": "dce226",
+      "description": "Pull requests which need code review, and approval from maintainers or ATLauncher team."
+    },
+    {
+      "name": "needs-testing",
+      "color": "dce226",
+      "description": "Pull requests which need manual testing."
+    },
+    {
+      "name": "question",
+      "color": "9ffc64",
+      "description": "Questions more than bug reports or feature requests (e.g. how do I do X)."
+    },
+    {
+      "name": "ready-to-merge",
+      "color": "5bfc25",
+      "description": "Pull requests which have been reviewed and are ready to merge."
+    },
+    {
+      "name": "requires-changes",
+      "color": "b20737",
+      "description": "Pull requests which need to be updated based on review comments and then reviewed again."
+    },
+    {
+      "name": "triage-help-needed",
+      "color": "24ad8f",
+      "description": "Help is needed to triage the issue."
+    },
+    {
+      "name": "under-review",
+      "color": "00afe5",
+      "description": "Pull requests being reviewed by maintainers and/or ATLauncher team."
+    },
+    {
+      "name": "wontfix",
+      "color": "ffffff",
+      "description": "The ATLauncher team has decided not to fix these issues for now for some reason."
+    },
+    {
+      "name": "work-in-progress",
+      "color": "006b75",
+      "description": "Pull requests which are still being worked on, more changes will follow."
+    },
+    {
+      "name": "wrong-repo",
+      "color": "b60205",
+      "description": "Issues reported on the wrong repository."
+    }
+  ]
+}
