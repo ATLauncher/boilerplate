@@ -81,6 +81,11 @@
       "description": "Should be addressed with the highest priority."
     },
     {
+      "name": "discussion",
+      "color": "D4C5F9",
+      "description": "Issue that is having/needs discussion"
+    },
+    {
       "name": "duplicate",
       "color": "cccccc",
       "description": "Issues which are duplicates of other issues, i.e. they have been reported before."
@@ -144,6 +149,21 @@
       "name": "requires-changes",
       "color": "b20737",
       "description": "Pull requests which need to be updated based on review comments and then reviewed again."
+    },
+    {
+      "name": "roadmap-long-term",
+      "color": "5eedb4",
+      "description": "Items on the roadmap in the long term (6-12 months)"
+    },
+    {
+      "name": "roadmap-medium-term",
+      "color": "5eedb4",
+      "description": "Items on the roadmap in the medium term (3-6 months)"
+    },
+    {
+      "name": "roadmap-short-term",
+      "color": "5eedb4",
+      "description": "Items on the roadmap in the short term (1 month)"
     },
     {
       "name": "triage-help-needed",
