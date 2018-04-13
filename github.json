@@ -2,8 +2,8 @@
   "repositories": [
     {
       "owner": "ATLauncher",
-      "repo": "backend",
-      "discordHook": true,
+      "repo": "discord-bot",
+      "discordHook": false,
       "updateTemplateFiles": true
     },
     {
@@ -20,14 +20,8 @@
     },
     {
       "owner": "ATLauncher",
-      "repo": "client",
+      "repo": "next",
       "discordHook": true,
-      "updateTemplateFiles": true
-    },
-    {
-      "owner": "ATLauncher",
-      "repo": "discord-bot",
-      "discordHook": false,
       "updateTemplateFiles": true
     },
     {
