@@ -35,6 +35,10 @@
     "LICENSE",
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
+    ".github/config.yml",
+    ".github/no-response.yml",
+    ".github/stale.yml",
+    ".github/support.yml",
     ".github/ISSUE_TEMPLATE.md",
     ".github/PULL_REQUEST_TEMPLATE.md"
   ],
@@ -158,6 +162,11 @@
       "name": "roadmap-short-term",
       "color": "5eedb4",
       "description": "Items on the roadmap in the short term (1 month)"
+    },
+    {
+      "name": "support",
+      "color": "b60205",
+      "description": "User has asked for support, but support is not given via issues"
     },
     {
       "name": "triage-help-needed",
