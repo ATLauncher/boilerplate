@@ -12,7 +12,7 @@ const github = require('../../github.json');
 const octokit = octokitRest({
     requestMedia: 'application/vnd.github.v3+json',
     headers: {
-        'user-agent': 'octokit/rest.js v15.2.6'
+        'user-agent': 'octokit/rest.js v15.2.6',
     },
 });
 
@@ -23,20 +23,20 @@ if (!process.env.GITHUB_ACCESS_TOKEN) {
 
 octokit.authenticate({
     type: 'token',
-    token: process.env.GITHUB_ACCESS_TOKEN
-})
+    token: process.env.GITHUB_ACCESS_TOKEN,
+});
 
 github.repositories.filter(({ updateTemplateFiles }) => updateTemplateFiles).forEach(async ({ owner, repo }) => {
     console.log(`Updating template files for project ${owner}/${repo}`);
 
     try {
-        const { data: repoData } = await octokit.repos.get({ owner, repo })
+        const { data: repoData } = await octokit.repos.get({ owner, repo });
 
         // get the year the repository was created
         const { year: yearCreated } = DateTime.fromISO(repoData.created_at);
 
         const templateMetaData = {
-            year: yearCreated
+            year: yearCreated,
         };
 
         github.templateFiles.forEach(async (templateFile) => {
@@ -51,7 +51,7 @@ github.repositories.filter(({ updateTemplateFiles }) => updateTemplateFiles).for
                     owner,
                     repo,
                     path: templateFile,
-                    ref: 'master'
+                    ref: 'master',
                 });
 
                 const oldFileData = base64.decode(existingFile.content);
@@ -76,13 +76,13 @@ github.repositories.filter(({ updateTemplateFiles }) => updateTemplateFiles).for
                     sha: existingFile.sha,
                     committer: {
                         name: 'ATLauncher Meta Bot',
-                        email: 'no-reply@atlauncher.com'
+                        email: 'no-reply@atlauncher.com',
                     },
                     branch: 'master',
                 });
             } catch (e) {
                 if (e.code !== 404) {
-                    throw (e);
+                    throw e;
                     return;
                 }
 
@@ -96,7 +96,7 @@ github.repositories.filter(({ updateTemplateFiles }) => updateTemplateFiles).for
                     content: updatedBase64data,
                     committer: {
                         name: 'ATLauncher Meta Bot',
-                        email: 'no-reply@atlauncher.com'
+                        email: 'no-reply@atlauncher.com',
                     },
                     branch: 'master',
                 });
@@ -104,9 +104,42 @@ github.repositories.filter(({ updateTemplateFiles }) => updateTemplateFiles).for
                 return;
             }
         });
+
+        github.oldTemplateFiles.forEach(async (templateFile) => {
+            try {
+                const { data: existingFile } = await octokit.repos.getContent({
+                    owner,
+                    repo,
+                    path: templateFile,
+                    ref: 'master',
+                });
+
+                console.log(`Deleting file '${templateFile}' for project ${owner}/${repo}`);
+
+                await octokit.repos.deleteFile({
+                    owner,
+                    repo,
+                    path: templateFile,
+                    message: `chore: delete ${templateFile}`,
+                    sha: existingFile.sha,
+                    committer: {
+                        name: 'ATLauncher Meta Bot',
+                        email: 'no-reply@atlauncher.com',
+                    },
+                    branch: 'master',
+                });
+            } catch (e) {
+                if (e.code === 404) {
+                    console.log(`File '${templateFile}' already deleted for project ${owner}/${repo}`);
+                    return;
+                }
+
+                throw e;
+            }
+        });
     } catch (e) {
         console.log('-----');
-        console.error(`[${owner}/${repo}] Error from GitHub:`)
+        console.error(`[${owner}/${repo}] Error from GitHub:`);
         console.log();
         console.error(e);
         process.exit(1);
