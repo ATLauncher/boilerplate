@@ -62,7 +62,7 @@
     {
       "name": "beginner",
       "color": "6badd3",
-      "description": "Less complex issues which would be good first issues to work on for users who want to contribute."
+      "description": "Less complex issues which would be good first issues to work on."
     },
     {
       "name": "blocked",
@@ -82,7 +82,7 @@
     {
       "name": "discussion",
       "color": "D4C5F9",
-      "description": "Issue that is having/needs discussion"
+      "description": "Issue that is having/needs discussion."
     },
     {
       "name": "duplicate",
@@ -152,17 +152,17 @@
     {
       "name": "roadmap-long-term",
       "color": "5eedb4",
-      "description": "Items on the roadmap in the long term (6-12 months)"
+      "description": "Items on the roadmap in the long term (6-12 months)."
     },
     {
       "name": "roadmap-medium-term",
       "color": "5eedb4",
-      "description": "Items on the roadmap in the medium term (3-6 months)"
+      "description": "Items on the roadmap in the medium term (3-6 months)."
     },
     {
       "name": "roadmap-short-term",
       "color": "5eedb4",
-      "description": "Items on the roadmap in the short term (1 month)"
+      "description": "Items on the roadmap in the short term (1 month)."
     },
     {
       "name": "support",
