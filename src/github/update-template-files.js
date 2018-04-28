@@ -75,8 +75,8 @@ github.repositories.filter(({ updateTemplateFiles }) => updateTemplateFiles).for
                     content: updatedBase64data,
                     sha: existingFile.sha,
                     committer: {
-                        name: 'ATLauncher Meta Bot',
-                        email: 'no-reply@atlauncher.com',
+                        name: 'ATLauncher Bot',
+                        email: '38805255+atlauncher-bot@users.noreply.github.com',
                     },
                     branch: 'master',
                 });
@@ -95,8 +95,8 @@ github.repositories.filter(({ updateTemplateFiles }) => updateTemplateFiles).for
                     message: `chore: add ${templateFile}`,
                     content: updatedBase64data,
                     committer: {
-                        name: 'ATLauncher Meta Bot',
-                        email: 'no-reply@atlauncher.com',
+                        name: 'ATLauncher Bot',
+                        email: '+atlauncher-bot@users.noreply.github.com',
                     },
                     branch: 'master',
                 });
@@ -123,8 +123,8 @@ github.repositories.filter(({ updateTemplateFiles }) => updateTemplateFiles).for
                     message: `chore: delete ${templateFile}`,
                     sha: existingFile.sha,
                     committer: {
-                        name: 'ATLauncher Meta Bot',
-                        email: 'no-reply@atlauncher.com',
+                        name: 'ATLauncher Bot',
+                        email: '+atlauncher-bot@users.noreply.github.com',
                     },
                     branch: 'master',
                 });
