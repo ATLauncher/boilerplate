@@ -20,7 +20,7 @@
     },
     {
       "owner": "ATLauncher",
-      "repo": "next",
+      "repo": "backend",
       "discordHook": true,
       "updateTemplateFiles": true
     },
