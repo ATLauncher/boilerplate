@@ -8,6 +8,12 @@
     },
     {
       "owner": "ATLauncher",
+      "repo": "ATLauncher",
+      "discordHook": false,
+      "updateTemplateFiles": true
+    },
+    {
+      "owner": "ATLauncher",
       "repo": "javascript",
       "discordHook": true,
       "updateTemplateFiles": true
@@ -21,12 +27,6 @@
     {
       "owner": "ATLauncher",
       "repo": "backend",
-      "discordHook": true,
-      "updateTemplateFiles": true
-    },
-    {
-      "owner": "ATLauncher",
-      "repo": "style-guide",
       "discordHook": true,
       "updateTemplateFiles": true
     }
