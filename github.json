@@ -10,7 +10,10 @@
       "owner": "ATLauncher",
       "repo": "ATLauncher",
       "discordHook": false,
-      "updateTemplateFiles": true
+      "updateTemplateFiles": true,
+      "excludedTemplateFiles": [
+        "LICENSE"
+      ]
     },
     {
       "owner": "ATLauncher",

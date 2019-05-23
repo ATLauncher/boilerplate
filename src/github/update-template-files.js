@@ -26,7 +26,7 @@ octokit.authenticate({
     token: process.env.GITHUB_ACCESS_TOKEN,
 });
 
-github.repositories.filter(({ updateTemplateFiles }) => updateTemplateFiles).forEach(async ({ owner, repo }) => {
+github.repositories.filter(({ updateTemplateFiles }) => updateTemplateFiles).forEach(async ({ owner, repo, excludedTemplateFiles = [] }) => {
     console.log(`Updating template files for project ${owner}/${repo}`);
 
     try {
@@ -39,7 +39,7 @@ github.repositories.filter(({ updateTemplateFiles }) => updateTemplateFiles).for
             year: yearCreated,
         };
 
-        github.templateFiles.forEach(async (templateFile) => {
+        github.templateFiles.filter((file) => !excludedTemplateFiles.includes(file)).forEach(async (templateFile) => {
             const template = _.template(fs.readFileSync(path.resolve(__dirname, '../../template', templateFile)));
 
             const updatedFileData = template(templateMetaData);
