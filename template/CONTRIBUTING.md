@@ -46,11 +46,6 @@ merged should be resolved by creating a new issue and feature branch.
 An example of a good name for a feature branch is say there is an issue (#44) which is about not being able to delete a
 pack. A good name for a feature branch would be `feature/44-unable-to-delete-packs` and go from there.
 
-## Styling Best Practices
-
-When committing code or documentation, please ensure that you follow our set out
-[style guide](https://github.com/ATLauncher/style-guide).
-
 ## Issue and Pull Request Labels
 
 This section lists the labels we use to help us track and manage issues and pull requests. While some labels are not
