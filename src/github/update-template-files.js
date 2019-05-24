@@ -83,7 +83,7 @@ github.repositories
                             branch: 'master',
                         });
                     } catch (e) {
-                        if (e.code !== 404) {
+                        if (e.status !== 404) {
                             throw e;
                             return;
                         }
@@ -131,7 +131,7 @@ github.repositories
                         branch: 'master',
                     });
                 } catch (e) {
-                    if (e.code === 404) {
+                    if (e.status === 404) {
                         console.log(
                             `File '${templateFile}' already deleted for project ${owner}/${repo}`,
                         );

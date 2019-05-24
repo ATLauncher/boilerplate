@@ -41,10 +41,11 @@
     "SUPPORT.md",
     ".github/config.yml",
     ".github/no-response.yml",
-    ".github/ISSUE_TEMPLATE.md",
+    ".github/ISSUE_TEMPLATE/bug_report.md",
+    ".github/ISSUE_TEMPLATE/feature_request.md",
     ".github/PULL_REQUEST_TEMPLATE.md"
   ],
-  "oldTemplateFiles": [".github/support.yml", ".github/CONTRIBUTING.md", ".github/SUPPORT.md", ".github/stale.yml"],
+  "oldTemplateFiles": [".github/support.yml", ".github/CONTRIBUTING.md", ".github/SUPPORT.md", ".github/stale.yml", ".github/ISSUE_TEMPLATE.md"],
   "webhooks": {
     "discord": {
       "events": [
