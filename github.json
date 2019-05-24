@@ -32,6 +32,12 @@
       "repo": "backend",
       "discordHook": true,
       "updateTemplateFiles": true
+    },
+    {
+      "owner": "ATLauncher",
+      "repo": "wiki",
+      "discordHook": false,
+      "updateTemplateFiles": true
     }
   ],
   "templateFiles": [
@@ -41,11 +47,10 @@
     "SUPPORT.md",
     ".github/config.yml",
     ".github/no-response.yml",
-    ".github/stale.yml",
     ".github/ISSUE_TEMPLATE.md",
     ".github/PULL_REQUEST_TEMPLATE.md"
   ],
-  "oldTemplateFiles": [".github/support.yml", ".github/CONTRIBUTING.md", ".github/SUPPORT.md"],
+  "oldTemplateFiles": [".github/support.yml", ".github/CONTRIBUTING.md", ".github/SUPPORT.md", ".github/stale.yml"],
   "webhooks": {
     "discord": {
       "events": [
