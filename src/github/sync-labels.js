@@ -9,14 +9,14 @@ const octokit = octokitRest({
     },
 });
 
-if (!process.env.GITHUB_ACCESS_TOKEN) {
-    console.error('GITHUB_ACCESS_TOKEN environment variable must be provided.');
+if (!process.env.ACCESS_TOKEN_GITHUB) {
+    console.error('ACCESS_TOKEN_GITHUB environment variable must be provided.');
     process.exit(1);
 }
 
 octokit.authenticate({
     type: 'token',
-    token: process.env.GITHUB_ACCESS_TOKEN
+    token: process.env.ACCESS_TOKEN_GITHUB
 })
 
 github.repositories.forEach(async ({ owner, repo }) => {

@@ -33,7 +33,7 @@ Next install the project dependencies:
 npm install
 ```
 
-Lastly you will need to either set an environment variable called `GITHUB_ACCESS_TOKEN` with a GitHub access token
+Lastly you will need to either set an environment variable called `ACCESS_TOKEN_GITHUB` with a GitHub access token
 generated from <https://github.com/settings/tokens>.
 
 ### Add Discord Hook
