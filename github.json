@@ -3,13 +3,11 @@
     {
       "owner": "ATLauncher",
       "repo": "discord-bot",
-      "discordHook": false,
       "updateTemplateFiles": true
     },
     {
       "owner": "ATLauncher",
       "repo": "ATLauncher",
-      "discordHook": false,
       "updateTemplateFiles": true,
       "excludedTemplateFiles": [
         "LICENSE"
@@ -18,25 +16,21 @@
     {
       "owner": "ATLauncher",
       "repo": "javascript",
-      "discordHook": true,
       "updateTemplateFiles": true
     },
     {
       "owner": "ATLauncher",
       "repo": "meta",
-      "discordHook": true,
       "updateTemplateFiles": false
     },
     {
       "owner": "ATLauncher",
       "repo": "backend",
-      "discordHook": true,
       "updateTemplateFiles": true
     },
     {
       "owner": "ATLauncher",
       "repo": "wiki",
-      "discordHook": false,
       "updateTemplateFiles": true
     }
   ],

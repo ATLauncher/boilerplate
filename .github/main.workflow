@@ -18,5 +18,5 @@ action "Run" {
   needs = "Install"
   uses = "actions/npm@master"
   args = "all"
-  secrets = ["DISCORD_WEBHOOK_URL", "ACCESS_TOKEN_GITHUB"]
+  secrets = ["ACCESS_TOKEN_GITHUB"]
 }

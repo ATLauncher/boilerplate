@@ -25,7 +25,6 @@
   "scripts": {
     "all": "run-s github",
     "github": "run-s github:*",
-    "github:discord-hook": "node src/github/discord-hook.js",
     "github:sync-labels": "node src/github/sync-labels.js",
     "github:update-template-files": "node src/github/update-template-files.js"
   },
