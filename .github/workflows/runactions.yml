@@ -16,7 +16,7 @@ jobs:
       - run: npm ci
 
   run-all:
-    needs: build
+    needs: install
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
