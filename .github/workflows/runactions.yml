@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-        env:
-          ACCESS_TOKEN_GITHUB: ${{secrets.ACCESS_TOKEN_GITHUB}}
       - run: npm ci
       - run: npm run all
+        env:
+          ACCESS_TOKEN_GITHUB: ${{secrets.ACCESS_TOKEN_GITHUB}}
