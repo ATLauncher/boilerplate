@@ -1,0 +1,28 @@
+name: Run actions
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: npm ci
+
+  run-all:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: npm run all
+        env:
+          ACCESS_TOKEN_GITHUB: ${{secrets.ACCESS_TOKEN_GITHUB}}
