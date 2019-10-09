@@ -23,7 +23,7 @@
     }
   },
   "scripts": {
-    "all": "run-s github",
+    "all": "npm run github",
     "github": "run-s github:*",
     "github:sync-labels": "node src/github/sync-labels.js",
     "github:update-template-files": "node src/github/update-template-files.js"
