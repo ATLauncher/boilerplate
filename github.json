@@ -15,11 +15,6 @@
     },
     {
       "owner": "ATLauncher",
-      "repo": "javascript",
-      "updateTemplateFiles": true
-    },
-    {
-      "owner": "ATLauncher",
       "repo": "meta",
       "updateTemplateFiles": false
     },
@@ -30,7 +25,12 @@
     },
     {
       "owner": "ATLauncher",
-      "repo": "wiki",
+      "repo": "client",
+      "updateTemplateFiles": true
+    },
+    {
+      "owner": "ATLauncher",
+      "repo": "website",
       "updateTemplateFiles": true
     }
   ],
