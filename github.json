@@ -45,22 +45,13 @@
     ".github/ISSUE_TEMPLATE/feature_request.md",
     ".github/PULL_REQUEST_TEMPLATE.md"
   ],
-  "oldTemplateFiles": [".github/support.yml", ".github/CONTRIBUTING.md", ".github/SUPPORT.md", ".github/stale.yml", ".github/ISSUE_TEMPLATE.md"],
-  "webhooks": {
-    "discord": {
-      "events": [
-        "commit_comment",
-        "issues",
-        "issue_comment",
-        "milestone",
-        "pull_request",
-        "pull_request_review",
-        "pull_request_review_comment",
-        "push",
-        "release"
-      ]
-    }
-  },
+  "oldTemplateFiles": [
+    ".github/support.yml",
+    ".github/CONTRIBUTING.md",
+    ".github/SUPPORT.md",
+    ".github/stale.yml",
+    ".github/ISSUE_TEMPLATE.md"
+  ],
   "labels": [
     {
       "name": "beginner",
