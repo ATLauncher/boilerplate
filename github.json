@@ -40,6 +40,7 @@
     "CONTRIBUTING.md",
     "SUPPORT.md",
     ".github/config.yml",
+    ".github/FUNDING.yml",
     ".github/no-response.yml",
     ".github/ISSUE_TEMPLATE/bug_report.md",
     ".github/ISSUE_TEMPLATE/feature_request.md",
