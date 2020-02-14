@@ -1,23 +1,23 @@
-const fs = require('fs');
-const _ = require('lodash');
-const path = require('path');
-const sha1 = require('sha1');
-const base64 = require('base-64');
-const { DateTime } = require('luxon');
-const { createHash } = require('crypto');
-const Octokit = require('@octokit/rest');
+const fs = require("fs");
+const template = require("lodash/template");
+const isEqual = require("lodash/isEqual");
+const path = require("path");
+const sha1 = require("sha1");
+const base64 = require("base-64");
+const { DateTime } = require("luxon");
+const Octokit = require("@octokit/rest");
 
-const github = require('../../github.json');
+const github = require("../../github.json");
 
 if (!process.env.ACCESS_TOKEN_GITHUB) {
-    console.error('ACCESS_TOKEN_GITHUB environment variable must be provided.');
+    console.error("ACCESS_TOKEN_GITHUB environment variable must be provided.");
     process.exit(1);
 }
 
 const octokit = Octokit({
-    requestMedia: 'application/vnd.github.v3+json',
-    userAgent: 'octokit/rest.js v16.27.0',
-    auth: `token ${process.env.ACCESS_TOKEN_GITHUB}`,
+    requestMedia: "application/vnd.github.v3+json",
+    userAgent: "octokit/rest.js v16.27.0",
+    auth: `token ${process.env.ACCESS_TOKEN_GITHUB}`
 });
 
 github.repositories
@@ -32,42 +32,55 @@ github.repositories
             const { year: yearCreated } = DateTime.fromISO(repoData.created_at);
 
             const templateMetaData = {
-                year: yearCreated,
+                year: yearCreated
             };
 
             github.templateFiles
                 .filter(file => !excludedTemplateFiles.includes(file))
                 .forEach(async templateFile => {
-                    const template = _.template(
-                        fs.readFileSync(path.resolve(__dirname, '../../template', templateFile)),
+                    const compiledTemplate = template(
+                        fs.readFileSync(
+                            path.resolve(
+                                __dirname,
+                                "../../template",
+                                templateFile
+                            )
+                        )
                     );
 
-                    const updatedFileData = template(templateMetaData);
+                    const updatedFileData = compiledTemplate(templateMetaData);
                     const updatedBase64data = base64.encode(updatedFileData);
                     const updatedFileSha = sha1(updatedFileData);
 
                     try {
-                        const { data: existingFile } = await octokit.repos.getContents({
+                        const {
+                            data: existingFile
+                        } = await octokit.repos.getContents({
                             owner,
                             repo,
                             path: templateFile,
-                            ref: 'master',
+                            ref: "master"
                         });
 
                         const oldFileData = base64.decode(existingFile.content);
                         const oldBase64data = base64.encode(oldFileData);
                         const oldFileSha = sha1(oldFileData);
 
-                        const fileUpToDate = _.isEqual(oldFileData, updatedFileData);
+                        const fileUpToDate = isEqual(
+                            oldFileData,
+                            updatedFileData
+                        );
 
                         if (fileUpToDate) {
                             console.log(
-                                `File '${templateFile}' already up to date for project ${owner}/${repo}`,
+                                `File '${templateFile}' already up to date for project ${owner}/${repo}`
                             );
                             return;
                         }
 
-                        console.log(`Updating '${templateFile}' for project ${owner}/${repo}`);
+                        console.log(
+                            `Updating '${templateFile}' for project ${owner}/${repo}`
+                        );
 
                         await octokit.repos.updateFile({
                             owner,
@@ -77,10 +90,11 @@ github.repositories
                             content: updatedBase64data,
                             sha: existingFile.sha,
                             committer: {
-                                name: 'ATLauncher Bot',
-                                email: '38805255+atlauncher-bot@users.noreply.github.com',
+                                name: "ATLauncher Bot",
+                                email:
+                                    "38805255+atlauncher-bot@users.noreply.github.com"
                             },
-                            branch: 'master',
+                            branch: "master"
                         });
                     } catch (e) {
                         if (e.status !== 404) {
@@ -88,7 +102,9 @@ github.repositories
                             return;
                         }
 
-                        console.log(`Creating file '${templateFile}' for project ${owner}/${repo}`);
+                        console.log(
+                            `Creating file '${templateFile}' for project ${owner}/${repo}`
+                        );
 
                         await octokit.repos.createFile({
                             owner,
@@ -97,10 +113,11 @@ github.repositories
                             message: `chore: add ${templateFile}`,
                             content: updatedBase64data,
                             committer: {
-                                name: 'ATLauncher Bot',
-                                email: '+atlauncher-bot@users.noreply.github.com',
+                                name: "ATLauncher Bot",
+                                email:
+                                    "+atlauncher-bot@users.noreply.github.com"
                             },
-                            branch: 'master',
+                            branch: "master"
                         });
 
                         return;
@@ -109,14 +126,18 @@ github.repositories
 
             github.oldTemplateFiles.forEach(async templateFile => {
                 try {
-                    const { data: existingFile } = await octokit.repos.getContents({
+                    const {
+                        data: existingFile
+                    } = await octokit.repos.getContents({
                         owner,
                         repo,
                         path: templateFile,
-                        ref: 'master',
+                        ref: "master"
                     });
 
-                    console.log(`Deleting file '${templateFile}' for project ${owner}/${repo}`);
+                    console.log(
+                        `Deleting file '${templateFile}' for project ${owner}/${repo}`
+                    );
 
                     await octokit.repos.deleteFile({
                         owner,
@@ -125,15 +146,15 @@ github.repositories
                         message: `chore: delete ${templateFile}`,
                         sha: existingFile.sha,
                         committer: {
-                            name: 'ATLauncher Bot',
-                            email: '+atlauncher-bot@users.noreply.github.com',
+                            name: "ATLauncher Bot",
+                            email: "+atlauncher-bot@users.noreply.github.com"
                         },
-                        branch: 'master',
+                        branch: "master"
                     });
                 } catch (e) {
                     if (e.status === 404) {
                         console.log(
-                            `File '${templateFile}' already deleted for project ${owner}/${repo}`,
+                            `File '${templateFile}' already deleted for project ${owner}/${repo}`
                         );
                         return;
                     }
@@ -142,7 +163,7 @@ github.repositories
                 }
             });
         } catch (e) {
-            console.log('-----');
+            console.log("-----");
             console.error(`[${owner}/${repo}] Error from GitHub:`);
             console.log();
             console.error(e);
