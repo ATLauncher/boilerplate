@@ -50,6 +50,11 @@
   ],
   "labels": [
     {
+      "name": "awaiting-release",
+      "color": "5319e7",
+      "description": "Issues where the fix/feature has been merged and is awaiting a release."
+    },
+    {
       "name": "beginner",
       "color": "6badd3",
       "description": "Less complex issues which would be good first issues to work on."
